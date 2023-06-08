@@ -33,15 +33,26 @@ body {
 }
 /* 공통 클래스 */
 .container {
+  position: relative;
+  display: block;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
+.clearfix::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
 /* 레이아웃 */
 .wrap {
   position: relative;
   display: block;
 }
+/* 헤더 */
 .header {
   display: block;
   position: fixed;
@@ -210,4 +221,229 @@ body {
   width: 60px;
   height: 5px;
   background-color: #ed1c24;
+}
+.visual-txt {
+  position: relative;
+  display: block;
+  font-size: 21px;
+  color: #fff;
+  margin-top: 30px;
+}
+.visual-bt {
+  position: absolute;
+  left: calc(50% - 33px / 2);
+  /* 반틈에 33px 반 ..............????????????? */
+  /* 띄어쓰기 무조건! */
+  display: block;
+  width: 33px;
+  height: 33px;
+  background: url(../images/bg_common.png) no-repeat;
+  background-position: -122px 0;
+  border: 0;
+  font-size: 0;
+}
+/* 비지니스 */
+.business {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 100px 0;
+  background: #f8f8f8;
+}
+.business_inner {
+  position: relative;
+  display: block;
+}
+.business_top {
+  position: relative;
+  display: block;
+  margin-bottom: 70px;
+}
+.business_title {
+  position: relative;
+  display: block;
+  font-size: 44px;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 31px;
+  color: #111;
+}
+.business_title::after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 37px / 2);
+  bottom: 0;
+  display: block;
+  width: 37px;
+  height: 4px;
+  background-color: #ed1c24;
+}
+.business_desc {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+}
+.business_bottom {
+  position: relative;
+  display: block;
+}
+.business_list {
+  position: relative;
+  display: block;
+}
+.business_list > li {
+  position: relative;
+  display: block;
+  width: calc(100% / 5);
+  height: 420px;
+  float: left;
+  background: url("../images/img_business.png") no-repeat;
+  background-position: 0px 0px;
+}
+.business_list > li:nth-child(1) {
+  background-position: calc(240px * 0) 0px;
+}
+.business_list > li:nth-child(2) {
+  background-position: calc(240px * -1) 0px;
+}
+.business_list > li:nth-child(3) {
+  background-position: calc(240px * -2) 0px;
+}
+.business_list > li:nth-child(4) {
+  background-position: calc(240px * -3) 0px;
+}
+.business_list > li:nth-child(5) {
+  background-position: calc(240px * -4) 0px;
+}
+.business_list > li > a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 100px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  background-color: rgba(244, 128, 37, 0);
+  transition: background 0.5s;
+}
+.business_list > li > a:hover {
+  background-color: rgba(244, 128, 37, 1);
+}
+.business_list > li > a::after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 130px / 2);
+  bottom: 94px;
+  display: block;
+  width: 130px;
+  opacity: 0;
+  height: 112px;
+  visibility: hidden;
+  background: url("../images/bg_common.png") no-repeat;
+  background-position: 0px 0px;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+.business_list > li > a:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+.business_list > li:nth-child(1) > a::after {
+  background-position: -165px 0px;
+}
+.business_list > li:nth-child(2) > a::after {
+  background-position: -298px 0px;
+}
+.business_list > li:nth-child(3) > a::after {
+  background-position: 0px -116px;
+}
+.business_list > li:nth-child(4) > a::after {
+  background-position: -140px -121px;
+}
+.business_list > li:nth-child(5) > a::after {
+  background-position: -267px -116px;
+}
+/* 뉴스 */
+.news {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 55px 0;
+  background: #ed1c24;
+}
+.news_bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background-color: #58595b;
+}
+.news_inner {
+  position: relative;
+  display: block;
+}
+.news_wrap {
+  position: relative;
+  display: block;
+  width: calc(50% - 95px);
+}
+.news_inner .news_wrap:first-child {
+  float: left;
+}
+.news_inner .news_wrap:last-child {
+  float: right;
+}
+.news_wrap h3 {
+  position: relative;
+  display: block;
+  font-size: 32px;
+  color: #fff;
+  font-weight: 300;
+  margin-bottom: 45px;
+}
+.news_content {
+  position: relative;
+  display: block;
+}
+.news_list > li {
+  position: relative;
+  display: block;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 25px 0;
+}
+.news_list > li:last-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.news_list > li > a {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  color: #3a3838;
+}
+.news_list > li > a > .news_txt {
+  position: relative;
+  display: block;
+  width: 80%;
+
+  /* 말줄임  ... 표시하는 법 */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.news_list > li > a::after {
+  content: "";
+  position: absolute;
+  right: 29px;
+  top: 0px;
+  width: 48px;
+  height: 23px;
+  background: url("../images/bg_common.png") no-repeat;
+  background-position: 0px -49px;
+}
+.visual-bt {
+  cursor: pointer;
 }
